@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GESTION DE STOCK — ARTEMIS Security</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/localforage@1/dist/localforage.min.js"></script>
+</head>
+<body>
+<header class="hidden" id="hdr">
+  <img src="logo.svg" alt="ARTEMIS">
+  <h1>GESTION DE STOCK — ARTEMIS Security</h1>
+  <span class="badge" id="bAgency"></span>
+  <span class="badge" id="bRole"></span>
+  <div class="right">
+    <select id="agencySwitch" class="hidden"></select>
+    <button id="btnLogout" class="ghost">Déconnexion</button>
+  </div>
+</header>
+
+<div id="login" class="container">
+  <div class="card" style="max-width:520px;margin:10vh auto">
+    <div class="grid">
+      <img src="logo.svg" alt="logo" style="height:60px">
+      <h2>Connexion</h2>
+      <input id="lUser" placeholder="Identifiant">
+      <input id="lPass" type="password" placeholder="Mot de passe">
+      <button id="btnLogin" class="primary">Se connecter</button>
+      <span class="small">Aucun indice n’est affiché sur cette page.</span>
+    </div>
+  </div>
+</div>
+
+<div id="app" class="container hidden">
+  <div class="tabs" id="tabs"></div>
+
+  <div id="tab-home" class="card">
+    <h2>Bienvenue</h2>
+    <p>Utilisez le menu pour accéder aux modules : Catalogue, Mouvements, Statistiques, Admin.</p>
+  </div>
+
+  <div id="tab-catalogue" class="card hidden"><h2>Catalogue</h2><div id="placeholder-cat" class="small">Module à déposer (ZIP Catalogue).</div></div>
+  <div id="tab-mv" class="card hidden"><h2>Mouvements</h2><div class="small">Module à déposer (ZIP Mouvements).</div></div>
+  <div id="tab-stats" class="card hidden"><h2>Statistiques</h2><div class="small">Module à déposer (ZIP Stats).</div></div>
+  <div id="tab-admin" class="card hidden"><h2>Admin</h2><div class="small">Module à déposer (ZIP Admin).</div></div>
+</div>
+
+<div class="footer">ARTEMIS Security — Base (Module Commun)</div>
+<script src="app.js"></script>
+</body>
+</html>
